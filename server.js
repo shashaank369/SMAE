@@ -9,7 +9,7 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 const DB_PATH = process.env.DB_PATH || './smae-contacts.db';
-const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY';
+const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
 const RECAPTCHA_ENABLED =!!RECAPTCHA_SECRET_KEY;
 // Middleware
 app.use(cors());
