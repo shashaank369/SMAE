@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const DB_PATH = process.env.DB_PATH || './smae-contacts.db';
 const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY || '6LdEFDotAAAAAKQxzt23KxLNqanTRRc9p85X2EAc';
-const RECAPTCHA_ENABLED = RECAPTCHA_SECRET_KEY && !RECAPTCHA_SECRET_KEY.includes('YOUR_RECAPTCHA_SECRET_KEY');
+const RECAPTCHA_ENABLED = RECAPTCHA_SECRET_KEY && !RECAPTCHA_SECRET_KEY.includes('6LdEFDotAAAAAKQxzt23KxLNqanTRRc9p85X2EAc');
 
 // Middleware
 app.use(cors());
