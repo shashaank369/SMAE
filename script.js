@@ -92,12 +92,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
-const BACKEND_URLS = ['http://localhost:5000', 'http://127.0.0.1:5000'];
+const BACKEND_URL =
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1"
+        ? "http://localhost:5000"
+        : "https://smae-65y4.onrender.com";
 
 function getBackendUrl(path) {
-    const defaultUrl = BACKEND_URLS[0];
-    return defaultUrl + path;
+    return BACKEND_URL + path;
+}
+
+async function fetchWithFallback(url, options) {
+    const response = await fetch(url, options);
+
+    if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+    }
+
+    return response;
+
 }
 
 async function fetchWithFallback(url, options) {
