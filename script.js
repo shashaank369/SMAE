@@ -283,13 +283,21 @@ document.addEventListener('DOMContentLoaded', () => {
  * Chatbot Implementation
  */
 document.addEventListener('DOMContentLoaded', () => {
-    const chatbotToggle = document.getElementById('chatbot-toggle');
-    const chatbotWindow = document.getElementById('chatbot-window');
-    const chatbotClose = document.getElementById('chatbot-close');
-    const chatbotForm = document.getElementById('chatbot-form');
-    const chatbotInput = document.getElementById('chatbot-input');
-    const chatbotMessages = document.getElementById('chatbot-messages');
+const chatbotToggle = document.getElementById('chatbot-toggle');
+const chatbotWindow = document.getElementById('chatbot-window');
+const chatbotClose = document.getElementById('chatbot-close');
+const chatbotForm = document.getElementById('chatbot-form');
+const chatbotInput = document.getElementById('chatbot-input');
+const chatbotMessages = document.getElementById('chatbot-messages');
 
+if (
+    chatbotToggle &&
+    chatbotWindow &&
+    chatbotClose &&
+    chatbotForm &&
+    chatbotInput &&
+    chatbotMessages
+) {
     // Toggle Chat Window
     chatbotToggle.addEventListener('click', () => {
         chatbotWindow.classList.toggle('active');
@@ -297,6 +305,13 @@ document.addEventListener('DOMContentLoaded', () => {
             chatbotInput.focus();
         }
     });
+
+    chatbotClose.addEventListener('click', () => {
+        chatbotWindow.classList.remove('active');
+    });
+
+    // Put the rest of your chatbot code here...
+}
 
     // Close Chat Window
     chatbotClose.addEventListener('click', () => {
